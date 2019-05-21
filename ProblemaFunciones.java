@@ -42,17 +42,22 @@ public class ProblemaFunciones {
     private void Lavado(){
         Llenado(); // Se lleno la lavadora? Perfecto
         if(llenadoCompleto == 1){
-            if(colorRopa == 1){
-                System.out.println("Ropa blanca / Lavado suave");
-                System.err.println("Lavando...");
-                lavadoCompleto = 1;
+            switch (colorRopa) {
+                case 1:
+                    System.out.println("Ropa blanca / Lavado suave");
+                    System.err.println("Lavando...");
+                    lavadoCompleto = 1;
+                    break;
+                case 2:
+                    System.err.println("Ropa de color / Lavado intenso");
+                    System.err.println("Lavando...");
+                    lavadoCompleto = 1;
+                    break;
+                default:
+                    System.out.println("El tipo de ropa no esta disponible");
+                    lavadoCompleto = 1;
+                    break;
             }
-            else if(colorRopa == 2){
-                System.err.println("Ropa de color / Lavado intenso");
-                System.err.println("Lavando...");
-                lavadoCompleto = 1;
-            }
-            else{System.out.println("El tipo de ropa no esta disponible"); lavadoCompleto = 1;}
         }
     }
     
